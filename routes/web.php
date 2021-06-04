@@ -6,6 +6,7 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\PenggunaController;
 // wajib panggil
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -42,3 +43,7 @@ Route::get('/admin/halamanDetail/{id}', [AdminController::class, 'halamanDetail'
 Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
 // detail data
 Route::get('/siswa/detail/{id}', [SiswaController::class, 'detail'])->name('siswaDetail');
+
+// Menu Pengguna
+// Menampilkan data menggunakan Inner Join
+Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
