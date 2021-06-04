@@ -22,7 +22,14 @@
 			<tr>
 				<th scope="row">{{ $nomor++ }}</th>
 				<td>{{ $pengguna->nama }}</td>
-				<td>{{ $pengguna->kota }}</td>
+				<td>
+					<!-- cek jika pengguna memiliki kota yang tidak diketahui -->
+					@if($pengguna->kota == null)
+					Kota tidak diketahui
+					@else
+					{{ $pengguna->kota }}
+					@endif
+				</td>
 			</tr>
 			@endforeach
 			</tbody>
