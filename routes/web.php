@@ -7,7 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\PenggunaController;
-// wajib panggil
+use App\Http\Controllers\GuruController;
+// wajib gunakan
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 // jika user ada di url awal maka arahkan ke HomeController lalu method index
@@ -45,5 +46,9 @@ Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa');
 Route::get('/siswa/detail/{id}', [SiswaController::class, 'detail'])->name('siswaDetail');
 
 // Menu Pengguna
-// Menampilkan data menggunakan Inner Join
+// Menampilkan data menggunakan left Join
 Route::get('/pengguna', [PenggunaController::class, 'index'])->name('pengguna');
+
+// Menu guru
+// menampilkan data dari 2 tabel menggunakan left join
+Route::get('/guru', [GuruController::class, 'index'])->name('guru');
